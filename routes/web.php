@@ -76,4 +76,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::get('/dataDelete', [SofdeletedController::class, 'postsdel'])->middleware('auth', 'admin');
 Route::get('/data/{id}/restore', [SofdeletedController::class, 'restore'])->middleware('auth', 'admin');
 
+
+// not found
+Route::fallback(function () {
+    return response()->view('home.notfound');
+});
 require __DIR__ . '/auth.php';

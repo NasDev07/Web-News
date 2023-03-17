@@ -7,19 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>404</title>
+    <title>404 </title>
 
     <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Passion+One:900" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-
+    <!-- Custom stlylesheet -->
     <style>
         * {
             -webkit-box-sizing: border-box;
@@ -34,7 +28,6 @@
         #notfound {
             position: relative;
             height: 100vh;
-            background: #030005;
         }
 
         #notfound .notfound {
@@ -47,85 +40,94 @@
         }
 
         .notfound {
-            max-width: 767px;
+            max-width: 710px;
             width: 100%;
+            padding-left: 190px;
             line-height: 1.4;
-            text-align: center;
         }
 
         .notfound .notfound-404 {
-            position: relative;
-            height: 180px;
-            margin-bottom: 20px;
-            z-index: -1;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 150px;
+            height: 150px;
         }
 
         .notfound .notfound-404 h1 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Passion One', cursive;
+            color: #00b5c3;
+            font-size: 150px;
+            letter-spacing: 15.5px;
+            margin: 0px;
+            font-weight: 900;
             position: absolute;
             left: 50%;
             top: 50%;
             -webkit-transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-            font-size: 224px;
-            font-weight: 900;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            margin-left: -12px;
-            color: #030005;
-            text-transform: uppercase;
-            text-shadow: -1px -1px 0px #8400ff, 1px 1px 0px #ff005a;
-            letter-spacing: -20px;
         }
 
-
-        .notfound .notfound-404 h2 {
-            font-family: 'Montserrat', sans-serif;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 110px;
-            font-size: 42px;
+        .notfound h2 {
+            font-family: 'Raleway', sans-serif;
+            color: #292929;
+            font-size: 28px;
             font-weight: 700;
-            color: #fff;
             text-transform: uppercase;
-            text-shadow: 0px 2px 0px #8400ff;
-            letter-spacing: 13px;
-            margin: 0;
+            letter-spacing: 2.5px;
+            margin-top: 0;
+        }
+
+        .notfound p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333;
         }
 
         .notfound a {
-            font-family: 'Montserrat', sans-serif;
-            display: inline-block;
-            text-transform: uppercase;
-            color: #ff005a;
-            text-decoration: none;
-            border: 2px solid;
-            background: transparent;
-            padding: 10px 40px;
+            font-family: 'Raleway', sans-serif;
             font-size: 14px;
+            text-decoration: none;
+            text-transform: uppercase;
+            background: #fff;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 40px;
+            color: #292929;
             font-weight: 700;
+            -webkit-box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.3);
             -webkit-transition: 0.2s all;
             transition: 0.2s all;
         }
 
         .notfound a:hover {
-            color: #8400ff;
-        }
-
-        @media only screen and (max-width: 767px) {
-            .notfound .notfound-404 h2 {
-                font-size: 24px;
-            }
+            color: #fff;
+            background-color: #00b5c3;
         }
 
         @media only screen and (max-width: 480px) {
-            .notfound .notfound-404 h1 {
-                font-size: 182px;
+            .notfound {
+                text-align: center;
+            }
+
+            .notfound .notfound-404 {
+                position: relative;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .notfound {
+                padding-left: 15px;
+                padding-right: 15px;
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -133,10 +135,12 @@
     <div id="notfound">
         <div class="notfound">
             <div class="notfound-404">
-                <h1>404</h1>
-                <h2>Page not found</h2>
+                <h1>:(</h1>
             </div>
-            <a href="/">Homepage</a>
+            <h2>404 - Page not found</h2>
+            <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.
+            </p>
+            <a href="{{ url('/') }}">home page</a>
         </div>
     </div>
 
