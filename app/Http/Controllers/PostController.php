@@ -37,6 +37,7 @@ class PostController extends Controller
     {
         $menuBlog = 'active';
         $dataitem = Post::latest()->paginate(3);
-        return view('home.home-blog', compact('dataitem', 'menuBlog'));
+        $footerPosts = Post::latest()->take(4)->get();
+        return view('home.home-blog', compact('dataitem', 'menuBlog', 'footerPosts'));
     }
 }

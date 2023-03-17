@@ -362,7 +362,8 @@ section {
         font-family: var(--font-primary);
         font-size: 15px;
         font-weight: 600;
-        color: var(--color-primary);
+        /* color: var(--color-primary); */
+        color: #fff;
         white-space: nowrap;
         transition: 0.3s;
     }
@@ -378,7 +379,8 @@ section {
     .navbar .active,
     .navbar .active:focus,
     .navbar li:hover > a {
-        color: var(--color-primary);
+        /* color: var(--color-primary); */
+        color: #fff;
     }
 
     .navbar .dropdown ul,
@@ -400,7 +402,8 @@ section {
 
     .mobile-nav-toggle {
         display: inline-block;
-        color: var(--color-secondary);
+        /* color: var(--color-primary); */
+        color: #fff;
         font-size: 28px;
         cursor: pointer;
         line-height: 0;
@@ -408,7 +411,8 @@ section {
     }
 
     .mobile-nav-toggle.bi-x {
-        color: var(--color-black);
+        /* color: var(--color-black); */
+        color: #fff;
     }
 
     .mobile-nav-active {

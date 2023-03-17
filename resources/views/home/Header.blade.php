@@ -9,15 +9,8 @@
 
         <nav id="navbar" class="navbar fw-bold ">
             <ul>
-                <li><a href="{{ url('/') }}">Blog</a></li>
-                <li class="dropdown"><a href="category.html"><span>Categories</span> <i
-                            class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                        <li><a href="search-result.html">Search Result</a></li>
-                        <li><a href="#">Drop Down 1</a></li>
-                    </ul>
-                </li>
-
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ url('/blog-posts') }}">Blog</a></li>
                 <li><a href="{{ url('about') }}">About</a></li>
                 <li><a href="{{ url('/contact') }}">Contact</a></li>
             </ul>
@@ -28,9 +21,10 @@
             <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
             <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
 
+            {{-- <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a> --}}
+            <i class="bi bi-list mobile-nav-toggle"></i>
+
             <!-- ======= Search Form ======= -->
-            {{-- <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
-            <i class="bi bi-list mobile-nav-toggle"></i> --}}
             {{-- <div class="search-form-wrap js-search-form-wrap">
                 <form action="search-result.html" class="search-form">
                     <span class="icon bi-search"></span>

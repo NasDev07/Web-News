@@ -3,41 +3,41 @@
 @section('title', 'Blog Post')
 
 <style>
-    .pagination .page-item.active .page-link {
-        background-color: #008374;
-        border-color: #008374;
-        color: #008374;
+    #fixed-image {
+        max-width: 100%;
+        height: auto;
     }
 </style>
 @section('content')
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
-        <div class="container" data-aos="fade-up">
-            <div class="row gy-4 posts-list">
-                @foreach ($dataitem as $item)
-                    <div class="col-xl-4 col-md-6">
-                        <article>
-                            <div class="post-img">
-                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" class="img-fluid">
+<br><br>
+<!-- ======= Blog Section ======= -->
+<section id="hero-slider" class="hero-slider mt-5">
+    <div class="container-md">
+        <div class="row">
+            @foreach ($dataitem as $item)
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4">
+                    <a href="{{ route('post.show', $item->id) }}">
+                        <img id="fixed-image" src="{{ asset('storage/' . $item->image) }}" class="card-img-top"
+                            alt="{{ $item->title }}">
+                        <div class="card-body">
+                            <a href="{{ route('post.show', $item->id) }}" class="card-title" style="color: black">{{
+                                $item->title }}</a>
+                            <div class="post-meta"><span class="date">{{ $item->category->name }}</span> <span
+                                    class="mx-1">&bullet;</span>
+                                <span>{{ $item->created_at->format('M j, Y') }}</span>
                             </div>
-                            <div class="d-flex justify-content-between">
-                                <p class="post-category text-success">{{ $item->category->name }}</p>
-                                <p class="post-date">
-                                    <time datetime="{{ $item->created_at->format('Y-m-d') }}"><i class="bi bi-clock"></i>
-                                        {{ $item->created_at->format('M j, Y') }}</time>
-                                </p>
-                            </div>
-                            <h5 class="title">
-                                <a href="{{ route('post.show', $item->id) }}">{{ $item->title }}</a>
-                            </h5>
-                        </article>
-                    </div><!-- End post list item -->
-                @endforeach
-            </div><!-- End blog posts list -->
+                        </div>
+                    </a>
+                </div>
+            </div>
+            @endforeach
             <div class="mt-3">
                 {{ $dataitem->links() }}
             </div>
         </div>
-    </section>
-    <!-- End Blog Section -->
+    </div>
+
+</section>
+<!-- End Blog Section -->
 @endsection
